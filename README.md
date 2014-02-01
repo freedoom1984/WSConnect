@@ -18,7 +18,7 @@ WSConnect Class Method
 =========
 
 +(NSData*) sendGETRequestServerSyncWithReturnData: (NSString*)path
-
+=========
 This class method make the synchronus connection at the url and return the downloaded data in the NSData object.
 
 +(id) parseJSON: (NSData*)data
