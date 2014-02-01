@@ -1,7 +1,7 @@
 WSConnect
 =========
 WSConnect is a powerful library for your OBJ-C application.
-WSConnect download your JSON web-services data ( synchrous or asynchrous connection ) and parse it.
+WSConnect downloads your JSON web-services data ( synchrous or asynchrous connection ) and parse it.
 WSConnect use the delegate design pattern to return the parsed data, notify the connection or parsing problems.
 
 WSConnect is the library designed with love :)
@@ -89,20 +89,20 @@ With this instance method you can stop the active async request
 WSConnect Delegate Protocol
 =========
 
+`-(void)connectionError:(NSError *)error`
+
+This delegate method is called when there are the connection problems. In the `error` paramether you have the error information
+
+`-(void)errorParsingJSON:(NSString*)stringError`
+
+This delegate method is called when there are the JSON parsing problems. In the `stringError` paramether you have the parsing error information
 
 
-//
--(void)connectionError:(NSError *)error;
+`-(void)JSONDownloaded:(id)jsonData withTag:(NSInteger)tag`
+
+This delegate method is called when the parsing is correctly executed. In the `jsonData` object you have the ID object. You type it at the NSDictionary or NSArray object. The `tag` is the tag number of request
 
 
-//Metodo richiamato quando viene ricevuto un'errore durante il parsing del json
--(void)errorParsingJSON:(NSString*)stringError;
+`-(void)JSONDownloaded:(id)jsonData`
 
-
-//Metodo da implementare. Viene chiamato quando è stata ricevuta la risposta definitiva dal servizio e questa è stata parsata
-//contine anche il tag della chiamata
--(void)JSONDownloaded:(id)jsonData withTag:(NSInteger)tag;
-
-
-//Metodo da implementare. Viene chiamato quando è stata ricevuta la risposta definitiva dal servizio e questa è stata parsata
--(void)JSONDownloaded:(id)jsonData;
+This delegate method is called when the parsing is correctly executed. In the `jsonData` object you have the ID object. You type it at the NSDictionary or NSArray object. 
