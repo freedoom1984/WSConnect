@@ -80,4 +80,5 @@ Specify the delegate object in the method call `(id<WSConnectDelegate>)del` para
 
 
 `-(void)stopAsyncRequest`
+
 With this instance method you can stop the active async request 
