@@ -7,15 +7,14 @@
 
 #import "WSConnect-JSONKit.h"
 
-//debug level = 1 low debug level
-//debug level = 2 medium debug level
-//debug level = 3 high debug level
+//DebugLevel = 1 low debug level
+//DebugLevel = 2 medium debug level
+//DebugLevel = 3 high debug level
 
 @implementation WSConnect_JSONKit
 
 
-
-//Inizializzazione Oggetto ConnectionKit
+//Init method
 -(id)init
 {
     if(self)
@@ -26,15 +25,12 @@
 
 
 
-#pragma mark Return NSData
-//Effettua una connessione sincrona e scarica il contenuto di un url
-//Argomento fornito come stringa
 +(NSData*)sendGETRequestServerSyncWithReturnData:(NSString*)path
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     if(DebugLevel == 3)
-        NSLog(@"Path inviato %@", path);
+        NSLog(@"URL: %@", path);
     
     NSURL *jsonURL = [NSURL URLWithString:path];
     NSData *jsonData = [NSData dataWithContentsOfURL:jsonURL];
@@ -57,8 +53,9 @@
     
     NSURL *url = [NSURL URLWithString:path];
     
+    
     if(DebugLevel == 3)
-        NSLog(@"URL Creato: %@",url);
+        NSLog(@"URL: %@",url);
     
     
     delegate = del;
@@ -74,7 +71,6 @@
 
 
 
-//assgno un tag alla chiamata in modo da poterne fare varie nello stesso controller
 -(void)sendGETRequestServerASYNCWithReturnData:(NSString*)path withDelegate:(id<WSConnectDelegate>)del withCallTag:(NSInteger)tag
 {
     callTag = tag;
@@ -90,15 +86,13 @@
 
 
 
-#pragma mark Return Object
-//Effettua una connessione sincrona e scarica il contenuto di un url
-//Argomento fornito come stringa
+
 +(id)sendGETRequestServerSYNC:(NSString*)path
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     if(DebugLevel == 3)
-        NSLog(@"Path inviato %@", path);
+        NSLog(@"URL: %@", path);
     
     
     JSONDecoder *decoder = [[JSONDecoder alloc]init];
@@ -110,13 +104,13 @@
     
     if(error)
     {
-        NSLog(@"Eventuale errore %@", [error localizedDescription]); 
+        NSLog(@"Error: %@", [error localizedDescription]);
     }
         
 
     
     if(DebugLevel <= 3)
-        NSLog(@"downloaded data %@", data);
+        NSLog(@"Downloaded data: %@", data);
     
     [jsonData release];
     [jsonURL release];
@@ -140,7 +134,7 @@
     NSURL *url = [NSURL URLWithString:path];
     
     if(DebugLevel == 3)
-        NSLog(@"URL Creato: %@",url);
+        NSLog(@"URL: %@",url);
     
     
     delegate = del;
@@ -174,7 +168,7 @@
 +(id)parseJsonWithLocalPath:(NSString*)path
 {
     if(DebugLevel == 3)
-        NSLog(@"Path inviato %@", path);
+        NSLog(@"URL: %@", path);
     
     
     JSONDecoder *decoder = [[JSONDecoder alloc]init];
@@ -182,7 +176,7 @@
     id data = [decoder objectWithData:jsonData];
     
     if(DebugLevel == 1)
-        NSLog(@"dati parsati %@", data);
+        NSLog(@"Parsed data: %@", data);
     
     
     [jsonData release];
@@ -196,13 +190,13 @@
 +(id)parseJSON:(NSData*)data
 {
     if(DebugLevel == 3)
-        NSLog(@"Dati nsdata inviati %@", data);
+        NSLog(@"Passed NSData: %@", data);
     
     JSONDecoder *decoder = [[JSONDecoder alloc]init];
     id finalData = [decoder objectWithData:data];
     
     if(DebugLevel == 1)
-        NSLog(@"dati parsati %@", finalData);
+        NSLog(@"Parsed data: %@", finalData);
     
     [decoder release];
     
@@ -218,7 +212,7 @@
     
     
     if(DebugLevel == 3)
-        NSLog(@"Path inviato %@", filePath);
+        NSLog(@"Path: %@", filePath);
     
     
     JSONDecoder *decoder = [[JSONDecoder alloc]init];
@@ -226,7 +220,7 @@
     id data = [decoder objectWithData:jsonData];
     
     if(DebugLevel == 1)
-        NSLog(@"dati parsati %@", data);
+        NSLog(@"Parsed data: %@", data);
     
     
     [decoder release];
@@ -257,7 +251,7 @@
 // Errore
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error 
 {
-    NSLog(@"error connection");
+    NSLog(@"Error Connection");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = FALSE;
     [delegate connectionError:error];
 }
@@ -284,7 +278,7 @@
     
     if(error)
     {
-        NSLog(@"Eventuale errore %@", [error localizedDescription]);
+        NSLog(@"Error: %@", [error localizedDescription]);
         [delegate errorParsingJSON:[error localizedDescription]];
     }
     else
