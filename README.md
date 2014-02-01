@@ -82,3 +82,27 @@ Specify the delegate object in the method call `(id<WSConnectDelegate>)del` para
 `-(void)stopAsyncRequest`
 
 With this instance method you can stop the active async request 
+
+
+
+
+WSConnect Delegate Protocol
+=========
+
+
+
+//
+-(void)connectionError:(NSError *)error;
+
+
+//Metodo richiamato quando viene ricevuto un'errore durante il parsing del json
+-(void)errorParsingJSON:(NSString*)stringError;
+
+
+//Metodo da implementare. Viene chiamato quando è stata ricevuta la risposta definitiva dal servizio e questa è stata parsata
+//contine anche il tag della chiamata
+-(void)JSONDownloaded:(id)jsonData withTag:(NSInteger)tag;
+
+
+//Metodo da implementare. Viene chiamato quando è stata ricevuta la risposta definitiva dal servizio e questa è stata parsata
+-(void)JSONDownloaded:(id)jsonData;
