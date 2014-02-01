@@ -108,3 +108,12 @@ WSConnect Delegate Protocol - Optional Method
 `-(void)JSONDownloaded:(id)jsonData withTag:(NSInteger)tag`
 
 This delegate method is called when the parsing is correctly executed. In the `jsonData` object you have the ID object. You type it at the NSDictionary or NSArray object. The `tag` is the tag number of request
+
+
+
+Contact information
+=========
+You can contact me at info@creact.it
+
+Creact.it - Mobile & Web
+Web: www.creact.it
