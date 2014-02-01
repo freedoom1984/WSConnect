@@ -1,8 +1,9 @@
 WSConnect
 =========
 WSConnect is a powerful library for your OBJ-C applications.
-WSConnect downloads your JSON web-services data ( synchrous or asynchrous connection ) and parses it.
-WSConnect uses the delegate design pattern to return the parsed data, notify the connection or parsing problems.
+WSConnect downloads your JSON web-services data ( with synchrous or asynchrous connection ) and parses it.
+With a single line of code you can download the web-services data, parse the JSON and use it for your application.
+WSConnect uses the delegate design pattern to return the parsed/not parsed data, notify the connection or parsing problems.
 
 WSConnect is the library designed with love :)
 
