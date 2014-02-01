@@ -16,6 +16,9 @@ Library general information
 DebugLevel 1 / 2 / 3 allows the log execution in the XCode Console. Specify your DebugLevel in the project Prefix file.
 WSConnect library don't support ARC.
 
+This library use JSONKit ( https://github.com/johnezang/JSONKit ) for parse the JSON downloaded data.
+
+
 
 
 
@@ -33,7 +36,7 @@ This class method return parsed JSON contained in the NSData object. The return 
 
 `+(id) parseJsonWithLocalPath: (NSString*)path`
 
-This class method parse the local JSON file. This method don't parse the bundle file
+This class method parse the local JSON file. This method doesn't parse the bundle file
 
 
 `+(id)sendGETRequestServerSYNC:(NSString*)path`
