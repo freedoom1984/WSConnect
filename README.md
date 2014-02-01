@@ -85,7 +85,7 @@ With this instance method you can stop the active async request
 
 
 
-WSConnect Delegate Required Protocol
+WSConnect Delegate Protocol - Required Method
 =========
 
 `-(void)connectionError:(NSError *)error`
@@ -102,7 +102,7 @@ This delegate method is called when there are the JSON parsing problems. In the 
 This delegate method is called when the parsing is correctly executed. In the `jsonData` object you have the ID object. You type it at the NSDictionary or NSArray object. 
 
 
-WSConnect Delegate Optional Protocol
+WSConnect Delegate Protocol - Optional Method
 =========
 
 `-(void)JSONDownloaded:(id)jsonData withTag:(NSInteger)tag`
