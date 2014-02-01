@@ -1,8 +1,8 @@
 WSConnect
 =========
-WSConnect is a powerful library for your OBJ-C application.
-WSConnect downloads your JSON web-services data ( synchrous or asynchrous connection ) and parse it.
-WSConnect use the delegate design pattern to return the parsed data, notify the connection or parsing problems.
+WSConnect is a powerful library for your OBJ-C applications.
+WSConnect downloads your JSON web-services data ( synchrous or asynchrous connection ) and parses it.
+WSConnect uses the delegate design pattern to return the parsed data, notify the connection or parsing problems.
 
 WSConnect is the library designed with love :)
 
@@ -13,9 +13,8 @@ WSConnect is the library designed with love :)
 
 Library general information
 =========
-DebugLevel 1 / 2 / 3 allow the log execution in the XCode Console. Specify your DebugLevel in the project Prefix file.
-WSConnect library don't support ARC ( automatic reference counting )
-
+DebugLevel 1 / 2 / 3 allows the log execution in the XCode Console. Specify your DebugLevel in the project Prefix file.
+WSConnect library don't support ARC.
 
 
 
@@ -86,7 +85,7 @@ With this instance method you can stop the active async request
 
 
 
-WSConnect Delegate Protocol
+WSConnect Delegate Required Protocol
 =========
 
 `-(void)connectionError:(NSError *)error`
@@ -98,11 +97,14 @@ This delegate method is called when there are the connection problems. In the `e
 This delegate method is called when there are the JSON parsing problems. In the `stringError` paramether you have the parsing error information
 
 
-`-(void)JSONDownloaded:(id)jsonData withTag:(NSInteger)tag`
-
-This delegate method is called when the parsing is correctly executed. In the `jsonData` object you have the ID object. You type it at the NSDictionary or NSArray object. The `tag` is the tag number of request
-
-
 `-(void)JSONDownloaded:(id)jsonData`
 
 This delegate method is called when the parsing is correctly executed. In the `jsonData` object you have the ID object. You type it at the NSDictionary or NSArray object. 
+
+
+WSConnect Delegate Optional Protocol
+=========
+
+`-(void)JSONDownloaded:(id)jsonData withTag:(NSInteger)tag`
+
+This delegate method is called when the parsing is correctly executed. In the `jsonData` object you have the ID object. You type it at the NSDictionary or NSArray object. The `tag` is the tag number of request
