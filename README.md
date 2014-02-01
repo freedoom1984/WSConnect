@@ -13,3 +13,9 @@ Library information
 =========
 DebugLevel 1 / 2 / 3 allow the log execution in the XCode Console. Specify your DebugLevel in the project Prefix file.
 
+
+WSConnect Class Method
+=========
+
++(NSData*)sendGETRequestServerSyncWithReturnData:(NSString*)path
+
