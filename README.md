@@ -18,13 +18,17 @@ WSConnect Class Method
 =========
 
 +(NSData*) sendGETRequestServerSyncWithReturnData: (NSString*)path
-=========
+
 This class method make the synchronus connection at the url and return the downloaded data in the NSData object.
 
+
 +(id) parseJSON: (NSData*)data
+
 This class method return parsed JSON contained in the NSData object. The return object is ID, you must type it in the origin method
 
+
 +(id) parseJsonWithLocalPath: (NSString*)path
+
 This class method parse the local JSON file 
 
 
