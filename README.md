@@ -11,5 +11,5 @@ WSConnect is the library designed with love :)
 
 Library information
 =========
-DebugLevel 1 / 2 / 3 allow the execution log in the XCode Console. Specify your DebugLevel in the project Prefix file.
+DebugLevel 1 / 2 / 3 allow the log execution in the XCode Console. Specify your DebugLevel in the project Prefix file.
 
