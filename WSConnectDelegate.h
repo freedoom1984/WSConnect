@@ -1,9 +1,8 @@
 //
-//  NetworkDelegate.h
-//  Roversi
+//  WSConnectDelegate.h
 //
-//  Created by Vittorio Monaco on 06/10/10.
-//  Copyright 2011 Merqurio. All rights reserved.
+//  Created by Luigi Marino on 26/07/12.
+//  Copyright (c) 2012 Creact.it All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

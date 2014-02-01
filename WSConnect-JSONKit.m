@@ -1,16 +1,15 @@
 //
 //  WSConnect-JSONKit.m
-//  livigno
 //
 //  Created by Luigi Marino on 26/07/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Creact.it All rights reserved.
 //
 
 #import "WSConnect-JSONKit.h"
 
-//debug level = 1 , basso
-//debug level = 2, medio
-//debug level = 3, alto
+//debug level = 1 low debug level
+//debug level = 2 medium debug level
+//debug level = 3 high debug level
 
 @implementation WSConnect_JSONKit
 
