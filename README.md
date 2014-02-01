@@ -17,7 +17,7 @@ DebugLevel 1 / 2 / 3 allow the log execution in the XCode Console. Specify your 
 WSConnect Class Method
 =========
 
-+(NSData*) sendGETRequestServerSyncWithReturnData: (NSString*)path
++(NSData*) sendGETRequestServerSyncWithReturnData: (NSString*)path\n
 This class method make the synchronus connection at the url and return the downloaded data in the NSData object.
 
 +(id) parseJSON: (NSData*)data
